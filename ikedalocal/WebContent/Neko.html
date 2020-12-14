@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <script src="js\jscroll-master\jquery.jscroll.js"></script>
+
+    <style>
+
+      .grid{
+
+        display:grid;
+
+        gap: 10px;
+
+        grid-template-columns: repeat(4, 200px);
+
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <header>
+
+      <h1>猫のいる日常</h1>
+
+    </header>
+
+    <div class="jscroll">
+
+      <dev class=grid>
+
+        <img src="img/01.jpg">
+
+        <img src="img/02.jpg">
+
+        <img src="img/03.jpg">
+
+        <img src="img/04.jpg">
+
+        <img src="img/05.jpg">
+
+        <img src="img/06.jpg">
+
+        <img src="img/07.jpg">
+
+        <img src="img/08.jpg">
+
+        <img src="img/09.jpg">
+
+        <img src="img/10.jpg">
+
+      </dev>
+
+      <footer>
+
+        <a class="jscroll-next" href="./GroupEdit2.jsp">next</a>
+
+      </footer>
+
+    </div>
+
+  <script>
+
+    var jscrollOption = {
+
+        loadingHtml: 'now loading',
+
+        autoTrigger: true,
+
+        padding: 20,
+
+        nextSelector: 'a.jscroll-next',
+
+        contentSelector: '.jscroll'
+
+      }
+
+      $('.jscroll').jscroll(jscrollOption);
+
+  </script>
+
+  </body>
+
+</html>

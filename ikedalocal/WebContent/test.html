@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+	<script type="text/javascript" src="popup.js"></script>
+
+<script>
+$(function(){
+$('#content').infinitescroll({
+navSelector   : ".navigation",
+nextSelector  : ".navigation a",
+itemSelector  : ".post",
+maxPage : 5,
+dataType      : "html",
+animate:true,
+extraScrollPx: 200,
+loading : {
+img : "loading.gif",
+finishedMsg : "LODING END"
+}
+},
+function(newElements) {
+$(newElements).hide().delay(100).fadeIn(600); // フェードイン処理
+$(".navigation").appendTo("#content").delay(300).fadeIn(600); // ナヴィゲーションボタンの移動
+});
+//クリックしてスクロールする場合必須
+$('#content').infinitescroll('unbind'); // 初期化
+$(".navigation a").click(function(){
+$('#content').infinitescroll('retrieve');
+return false;
+});
+
+});
+</script>
+
+</head>
+<body>
+<div id="demo">
+<h3>infinite scroll</h3>
+<section id="content">
+<div class="post">
+<h3>DEMO1</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.... </p>
+<p><img src="pic1.jpg"></p>
+<p>Fusce efficitur mauris vitae mauris fringilla semper... </p>
+<p>Nulla mattis, lectus non lobortis congue, dolor odio lacinia arcu...</p>
+<p> Mauris fermentum commodo finibus. Aenean ut odio varius, consequat nisl ...</p>
+<p>Nulla eget risus sed est ullamcorper condimentum. Phasellus ...</p>
+</div>
+<p class="navigation"><a href="test-2.html">MORE</a></p>
+</section>
+</div>
+
+</body>
+</html>

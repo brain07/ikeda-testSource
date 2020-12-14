@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+	<script type="text/javascript" src="popup.js"></script>
+</head>
+<body>
+<div id="js-wrapper" class="haguhoms">
+  <ul class="haguhoms__list">
+    <li class="haguhoms__item">
+      <p>a</p>
+      <p>ab</p>
+      <p>an</p>
+      <p>ac</p>
+      <p>af</p>
+      <p>ad</p>
+      <p>abc</p>
+      <p>adfg</p>
+      <p>ahij</p>
+      <p>aklm</p>
+      <p>awadf</p>
+      <p>afesdf</p>
+      <p>fceebhsty</p>
+      <p>giulfuy</p>
+      <p>srefgtst</p>
+      <p>rftgrstgrst</p>
+      <p>aklm</p>
+      <p>aklm</p>
+      <p>aklm</p>
+      <p>aklm</p>
+      <p>aklm</p>
+      <p>aklm</p>
+      <p>aklm</p>
+      <p>aklm</p>
+      <p>aklm</p>
+	<p>aklm</p>
+	<p>aklm</p>
+	<p>aklm</p>
+	<p>aklm</p>
+	<p>aklm</p>
+	<p>aklm</p>
+    </li>
+  </ul>
+  <div class="pagination">
+    <span class="pagination__page"></span>
+    <span class="pagination__next">
+      <a rel="next" href="GroupEdit2.jsp">次へ</a>
+    </span>
+  </div>
+</div>
+<script>
+$('#js-wrapper').infinitescroll({
+	  navSelector  : 'nav.pagination',
+	  nextSelector : 'nav.pagination a[rel=next]',
+	  itemSelector : '#js-wrapper li.haguhoms__item'
+	});
+</script>
+</body>
+</html>

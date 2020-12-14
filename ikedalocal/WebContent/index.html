@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="utf-8" />
+<title>Infinite Scroll</title>
+<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.js"></script>
+<link href="popup.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="container">
+  <section class="scroll_area">
+    <div class="post">
+      <img src="1.jpg" width="640" height="400" alt=""/> <br>
+      <img src="2.jpg" width="640" height="400" alt=""/> <br>
+      <img src="3.png" width="640" height="400" alt=""/> <br>
+      <img src="4.png" width="640" height="400" alt=""/>
+    </div>
+    <p class="next"><a href="index2.html"></a></p>
+    </section>
+</div>
+<!--googleのCDN（ネットワーク経由でコンテンツを提供するサービス）よりjqueryをロード-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<!--ダウンロードしたファイル-->
+<script src="infinitescroll.min.js"></script>
+<!--javascript追記-->
+<script>
+jQuery(function($){
+	$('.scroll_area').infinitescroll({
+    	navSelector: ".next", //リンクを囲む要素指定
+    	nextSelector: ".next a", //リンク要素自体指定
+    	itemSelector: ".post", //表示要素指定
+    	dataType: "html", //'html'、'php'、'json' など、読み込み先ファイル形式指定
+ 	animate: true, //アニメーション処理
+ 	extraScrollPx: 150, //アニメーションスクロール量指定。デフォルト値150
+ 	bufferPx: 40, //次コンテンツロードタイミング指定
+ 	errorCallback: function () { }, //404エラー発生時処理
+ 	maxPage:undefined, //読み込み上限回数
+    	loading: {
+        	finished: undefined,
+        	finishedMsg: "", //コンテンツ表示終了メッセージ
+        	msg: null,
+        	msgText: "", //ローディング中表示テキスト
+        	img: 'images/loading.gif', //ローディング中画像パス指定
+        	speed: 'slow',
+    	},
+	});
+});
+
+</script>
+</body>
+</html>

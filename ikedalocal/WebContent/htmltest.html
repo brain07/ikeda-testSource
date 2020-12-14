@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="htmltest.js"></script>
+</head>
+<body>
+
+<table>
+<thead>
+<tr>
+<td>cell1</td>
+<td>cell2</td>
+</tr>
+</thead>
+
+<tbody id="tablebody">
+</tbody>
+</table>
+
+<script type="text/javascript">
+	var tr_element = document.createElement('tr')
+	var parent_object = document.getElementById('tablebody');
+	tr_element.innerHTML = '<tr><td>cell11</td><td>cell21</td></tr>';
+	parent_object.appendChild(tr_element);
+</script>
+
+
+</body>
+</html>
